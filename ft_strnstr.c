@@ -14,15 +14,15 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	k;
-	int	ii;
+	size_t	i;
+	size_t	k;
+	size_t	ii;
 
-	i = -1;
+	i = 0;
 	k = 0;
 	if (little[0] == '\0')
 		return ((char *)big);
-	while (++i < (int)len)
+	while (i < len)
 	{
 		if (big[i] == little[k])
 		{
@@ -34,6 +34,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			k = 0;
 		if (!little[k])
 			return ((char *)&big[ii]);
+		i++;
 	}
 	return (NULL);
 }
