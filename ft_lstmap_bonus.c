@@ -14,12 +14,13 @@
 
 static void	*ft_free(t_list *new_list, t_list *buffer, void (*del)(void *))
 {
+	new_list = buffer;
 	while (new_list)
 	{
-		buffer = new_list;
+		buffer = new_list->next;
 		del(new_list->content);
-		new_list = buffer->next;
-		free(buffer);
+		free(new_list);
+		new_list = buffer;
 	}
 	return (NULL);
 }
