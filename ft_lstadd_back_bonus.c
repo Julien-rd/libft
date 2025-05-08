@@ -16,6 +16,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*navigator;
 
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
 	navigator = *lst;
 	while (navigator->next)
 		navigator = navigator->next;
