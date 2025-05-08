@@ -29,11 +29,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			if (!k)
 				ii = i;
 			k++;
+			if (!little[k])
+				return ((char *)&big[ii]);
 		}
 		else
 			k = 0;
-		if (!little[k])
-			return ((char *)&big[ii]);
 		i++;
 	}
 	return (NULL);
