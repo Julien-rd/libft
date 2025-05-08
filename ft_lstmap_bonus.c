@@ -50,5 +50,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_list = new_list->next;
 		navigator = navigator->next;
 	}
+	new_list = NULL;
 	return (buffer);
 }
