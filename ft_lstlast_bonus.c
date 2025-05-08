@@ -16,6 +16,8 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*buffer;
 
+	if (!lst)
+		return (NULL);
 	buffer = lst;
 	while (buffer->next)
 		buffer = buffer->next;
